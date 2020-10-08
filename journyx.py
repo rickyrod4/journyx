@@ -49,7 +49,7 @@ def jounyx_string():
     # Classify which case is going on basaed on the input
     for word in message_object:
         #Link if/else statement
-        if('http' in word):
+        if(word.find('http',0,5) != -1):
         #open page
         #rerieve url title
             url = word
