@@ -115,7 +115,7 @@ def jounyx_string():
             mentions_list.append(word)
             
         # Emoticon if/else statement
-        elif('(' in word and len(word)<=17 and ')' in word):
+        elif(word[0] == '(' and len(word)<=17 and word[len(word)-1] == ')'):
             word = word.replace('(','')
             word = word.replace(')','')
             emoticons_list.append(word)
