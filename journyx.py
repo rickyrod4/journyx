@@ -21,6 +21,8 @@ def jounyx_string():
     from urllib.request import urlopen
     from html.parser import HTMLParser
     import urllib
+    import json
+    
     #"""'
     # Get the input messaage from the user
     # go thru the string imported
@@ -115,7 +117,7 @@ def jounyx_string():
             mentions_list.append(word)
             
         # Emoticon if/else statement
-        elif(word[0] == '(' and len(word)<=17 and word[len(word)-1] == ')'):
+        elif(word[0] == '('  and len(word)<=17 and word[len(word)-1] == ')'):
             word = word.replace('(','')
             word = word.replace(')','')
             emoticons_list.append(word)
@@ -135,7 +137,6 @@ def jounyx_string():
         json_string["emoticons"] = emoticons_list
 
     #json format print and return the result
-    import json
     result = json.dumps(json_string, indent=2, sort_keys=True)
     print(result)
     return result
